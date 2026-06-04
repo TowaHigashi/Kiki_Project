@@ -28,7 +28,7 @@ export function useCameraController2() {
         const hasPositionTarget = !!sceneStore.targetPosition
         const hasLookAtTarget = !!sceneStore.targetLookAt
 
-        if (hasPositionTarget || hasLookAtTarget) {
+        if (hasPositionTarget || hasLookAtTarget) {                     
             // 移動中はコントロールとダンピングを無効化して干渉（カクツキ）を防ぐ
             controls.enabled = false
             controls.enableDamping = false
@@ -56,7 +56,7 @@ export function useCameraController2() {
                 controls.enabled = true
                 controls.enableDamping = true
             }
-        }
+        }               //カメラ捜査終了ログをいれてカメラが動かなくなったときに
     }
 
     return {

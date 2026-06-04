@@ -5,7 +5,7 @@ export const useSceneStore = defineStore('scene', () => {
     // ユーザーが散策中かどうかを管理するフラグ
     const isUserStrolling = ref(false)
 
-    // モーダル表示中かどうかを管理するフラグ
+    // モーダル表示中（オブジェクトズーム状態）かどうかを管理するフラグ
     const isModalOpen = ref(false)
 
     // どのオブジェクトをモーダル表示しているかを管理するフラグ
@@ -21,6 +21,8 @@ export const useSceneStore = defineStore('scene', () => {
 
     return {
         isUserStrolling,
+        isModalOpen,
+        whichModalSelected,
         camera,
         controls,
         targetPosition,

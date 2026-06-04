@@ -20,7 +20,7 @@ const handleBack = () => {
   
   // モーダル表示状態を解除する
   sceneStore.isModalOpen = false
-  console.log('開発用ログ: sceneStore.isModalOpen を false にしました (BackButton2押下)')
+  console.log('開発用ログ: isModalOpen を false にしました')
 
   // whichModalSelectedから選択中のIDを取得
   const id = sceneStore.whichModalSelected
@@ -37,6 +37,10 @@ const handleBack = () => {
   if (focusOutPosition && focusOutPosition !== '') {
     cameraController2.moveCamera(focusOutPosition, focusOutTarget)
   }
+
+  // オブジェクト選択状態を解消する
+  sceneStore.whichModalSelected = null
+  console.log('開発用ログ: whichModalSelected を null にしました')
 }
 </script>
 
@@ -110,3 +114,5 @@ const handleBack = () => {
   transform: translateY(10px);
 }
 </style>
+
+

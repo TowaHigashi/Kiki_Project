@@ -20,17 +20,7 @@ export function useRenderer(container) {
 
     container.appendChild(renderer.domElement)
 
-    const resize = () => {
-        renderer.setSize(
-            container.clientWidth,
-            container.clientHeight
-        )
-    }
-
-    window.addEventListener('resize', resize)
-
     return {
         renderer,
-        resize,
     }
 }

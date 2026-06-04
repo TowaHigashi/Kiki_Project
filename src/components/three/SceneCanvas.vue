@@ -14,9 +14,15 @@ import { useCameraController2 } from '@/components/three/CameraController2'
 import { useCameraBlurrer } from '@/components/three/CameraBlurrer'
 import { useSceneStore } from '@/stores/sceneStore'
 import { useStrollingDetection } from '@/composables/useStrollingDetection'
+import ObjectInfoPanel from '@/components/ui/ObjectInfoPanel.vue'
 
 import Object0a from '@/components/objects/Object0-a.vue'
 import Object0b from '@/components/objects/Object0-b.vue'
+import Object0c from '@/components/objects/Object0-c.vue'
+import Object0d from '@/components/objects/Object0-d.vue'
+import Object0e from '@/components/objects/Object0-e.vue'
+import Object0f from '@/components/objects/Object0-f.vue'
+
 
 const containerRef = ref(null)
 
@@ -104,6 +110,13 @@ onUnmounted(() => {
   <div ref="containerRef" class="scene-container">
     <Object0a :scene="scene" />
     <Object0b :scene="scene" /> 
+    <Object0c :scene="scene" />
+    <Object0d :scene="scene" />
+    <Object0e :scene="scene" />
+    <Object0f :scene="scene" />
+
+
+    <ObjectInfoPanel />
   </div>
 </template>
 
