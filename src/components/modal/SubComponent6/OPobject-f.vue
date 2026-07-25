@@ -13,7 +13,7 @@ const prevPage = () => {
 </script>
 
 <template>
-  <h1>猫です。</h1>
+  <h1>猫です。(予備)</h1>
 </template>
 
 <style scoped>

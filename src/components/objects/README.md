@@ -1,9 +1,6 @@
-## オブジェクト一覧　
+## オブジェクト描画
 
-※メタデータはsrc/data/objects.js参照
+※メタデータおよびオブジェクト定義は `src/data/objects.js` を参照してください。
 
-### 0番台（試し用オブジェクト）
-
-- Object0-a.vue
-
-- Object0-b.vue
+### 共通コンポーネント
+- `SceneObject.vue`: `objects.js` のメタデータに基づいて3Dモデル（GLTF/GLB）を動的にロード・配置します。

@@ -9,7 +9,7 @@ export function useThreeScene() {
     scene.background = new THREE.Color(0x202025)
 
     // fog
-    scene.fog = new THREE.Fog(0x202025, 10, 50)
+    //scene.fog = new THREE.Fog(0x202025, 10, 50)
 
     return {
         scene,

@@ -3,7 +3,7 @@
 export const modalComponentMap = {
     // 試しオブジェクト1 (id: 2001)
     2001: {
-        left: 2006,
+        left: 2007,
         right: 2002
     },
     // 試しオブジェクト2 (id: 2002)
@@ -29,6 +29,11 @@ export const modalComponentMap = {
     // 試しオブジェクト6 (id: 2006)
     2006: {
         left: 2005,
+        right: 2007
+    },
+    // クリック判定オブジェクト7 (id: 2007)
+    2007: {
+        left: 2006,
         right: 2001
     }
 };

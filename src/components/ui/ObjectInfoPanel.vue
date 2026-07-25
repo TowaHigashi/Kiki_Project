@@ -4,11 +4,11 @@ import { useSceneStore } from '@/stores/sceneStore'
 import { Objects } from '@/data/objects'
 import { useCameraController2 } from '@/components/three/CameraController2'
 
-import OPobjectB from '../model/OPobject-b.vue'
-import OPobjectC from '../model/OPobject-c.vue'
-import OPobjectD from '../model/OPobject-d.vue'
-import OPobjectE from '../model/OPobject-e.vue'
-import OPobjectF from '../model/OPobject-f.vue'
+import OPobjectB from '../modal/SubComponent2/OPobject-b.vue'
+import OPobjectC from '../modal/SubComponent3/OPobject-c.vue'
+import OPobjectD from '../modal/SubComponent4/OPobject-d.vue'
+import OPobjectE from '../modal/SubComponent5/OPobject-e.vue'
+import OPobjectF from '../modal/SubComponent6/OPobject-f.vue'
 
 const sceneStore = useSceneStore()
 const cameraController2 = useCameraController2()

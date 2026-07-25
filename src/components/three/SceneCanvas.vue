@@ -16,13 +16,12 @@ import { useSceneStore } from '@/stores/sceneStore'
 import { useStrollingDetection } from '@/composables/useStrollingDetection'
 import ObjectInfoPanel from '@/components/ui/ObjectInfoPanel.vue'
 
-import Object0a from '@/components/objects/Object0-a.vue'
-import Object0b from '@/components/objects/Object0-b.vue'
-import Object0c from '@/components/objects/Object0-c.vue'
-import Object0d from '@/components/objects/Object0-d.vue'
-import Object0e from '@/components/objects/Object0-e.vue'
-import Object0f from '@/components/objects/Object0-f.vue'
+import SceneObject from '@/components/objects/SceneObject.vue'
+import { Objects } from '@/data/objects'
 
+const getObj = (id) => {
+  return Objects.find(obj => obj.id === id)
+}
 
 const containerRef = ref(null)
 
@@ -108,13 +107,30 @@ onUnmounted(() => {
 
 <template>
   <div ref="containerRef" class="scene-container">
-    <Object0a :scene="scene" />
-    <Object0b :scene="scene" /> 
-    <Object0c :scene="scene" />
-    <Object0d :scene="scene" />
-    <Object0e :scene="scene" />
-    <Object0f :scene="scene" />
 
+    <SceneObject :scene="scene" :object-data="getObj(2001)" />
+    <SceneObject :scene="scene" :object-data="getObj(2002)" />
+    <SceneObject :scene="scene" :object-data="getObj(2003)" />
+    <SceneObject :scene="scene" :object-data="getObj(2004)" />
+    <SceneObject :scene="scene" :object-data="getObj(2005)" />
+    <SceneObject :scene="scene" :object-data="getObj(2006)" />
+
+<!-- 
+     -->
+
+    <SceneObject :scene="scene" :object-data="getObj(2007)" />
+    <SceneObject :scene="scene" :object-data="getObj(2101)" />
+    <SceneObject :scene="scene" :object-data="getObj(2102)" />
+    <SceneObject :scene="scene" :object-data="getObj(2103)" />
+
+    <!-- コンポーネント読み込み処理は最終的に以下に移管　※コード短縮のため -->
+    <!-- 
+    <SceneObject
+      v-for="objData in sceneObjects"
+      :key="objData.id"
+      :scene="scene"
+      :object-data="objData"
+    /> -->
 
     <ObjectInfoPanel />
   </div>
