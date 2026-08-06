@@ -6,19 +6,23 @@ export function useCameraBlurrer({ container, sceneStore }) {
     // 少しずつ変化させるため、CSSのtransitionを設定
     container.style.transition = 'filter 0.5s ease-in-out'
 
-    // sceneStore.isModalOpenの変更を監視
+    // sceneStore.isModalOpen と sceneStore.whichModalSelected の両方を監視
     const unwatch = watch(
-        () => sceneStore.isModalOpen,
-        (isOpen) => {
-            if (isOpen) {
-                // trueになったら：視界を少しグレーにする
+        () => ({
+            isOpen: sceneStore.isModalOpen,
+            id: sceneStore.whichModalSelected
+        }),
+        ({ isOpen, id }) => {
+            // モーダルが開いていて、かつIDが2001/2007でない場合のみグレーアウト
+            if (isOpen && ![2001, 2002, 2003, 2004, 2005, 2006, 2007].includes(id)) {
                 container.style.filter = 'grayscale(0.8)'
+                console.log('開発用ログ: グレーにしましたisOpen(true)')
             } else {
-                // falseになったら：元に戻す
                 container.style.filter = 'grayscale(0)'
+                console.log('開発用ログ: もとに戻しましたisOpen(false)')
             }
         },
-        { immediate: true } // 初期状態も反映
+        { immediate: true }
     )
 
     return {
@@ -32,4 +36,6 @@ export function useCameraBlurrer({ container, sceneStore }) {
     }
 }
 
-// どうしてもblurを入れたい場合は、CSSではなく Three.jsネイティブの「ポストプロセッシング（EffectComposer）」を使うといい（導入がめんどい）
+// TODO
+// ①どうしてもblurを入れたい場合は、CSSではなく Three.jsネイティブの「ポストプロセッシング（EffectComposer）」を使うといい（導入がめんどい）
+// ②モーダル表示を使用する時と同じタイミングで使用するので制御をまとめた方がすっきりするかも

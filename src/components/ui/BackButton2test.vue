@@ -1,4 +1,6 @@
 <script setup>
+// 不要であれば削除するTODO
+
 import { ref, watch } from 'vue'
 import { useSceneStore } from '@/stores/sceneStore'
 import { Objects } from '@/data/objects'

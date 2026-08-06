@@ -2,7 +2,7 @@
 import { computed } from 'vue'
 import { useSceneStore } from '@/stores/sceneStore'
 import { Objects } from '@/data/objects'
-import { useCameraController2 } from '@/components/three/CameraController2'
+// import { useCameraController2 } from '@/components/three/CameraController2'
 
 import OPobjectB from '../modal/SubComponent2/OPobject-b.vue'
 import OPobjectC from '../modal/SubComponent3/OPobject-c.vue'
@@ -11,14 +11,14 @@ import OPobjectE from '../modal/SubComponent5/OPobject-e.vue'
 import OPobjectF from '../modal/SubComponent6/OPobject-f.vue'
 
 const sceneStore = useSceneStore()
-const cameraController2 = useCameraController2()
+// const cameraController2 = useCameraController2()
 
-// 現在選択中Object
-const currentObject = computed(() => {
-  return Objects.find(
-    obj => obj.id === sceneStore.whichModalSelected
-  )
-})
+// 現在選択中Object 使用されていない。削除予定TODO
+// const currentObject = computed(() => {
+//   return Objects.find(
+//     obj => obj.id === sceneStore.whichModalSelected
+//   )
+// })
 
 const currentPanel = computed(() => {
 
@@ -44,27 +44,32 @@ const currentPanel = computed(() => {
   }
 })
 
-// CLOSE
-const handleClose = () => {
+// CLOSE 未使用。削除予定TODO
+// const handleClose = () => {
 
-  if (currentObject.value?.cameraFocusOut) {
+//   if (currentObject.value?.cameraFocusOut) {
 
-    cameraController2.moveCamera(
-      currentObject.value.cameraFocusOut.position,
-      currentObject.value.cameraFocusOut.target
-    )
-  }
+//     cameraController2.moveCamera(
+//       currentObject.value.cameraFocusOut.position,
+//       currentObject.value.cameraFocusOut.target
+//     )
+//   }
 
-  sceneStore.isModalOpen = false
-  sceneStore.whichModalSelected = null
-}
+//   sceneStore.isModalOpen = false
+//   sceneStore.whichModalSelected = null
+// }
+
+// モーダル表示の条件。isModalOpenかつ、2001,2007以外なら表示する
+const canOpenModal = computed(() => {
+  return (
+    sceneStore.isModalOpen &&
+    ![2001, 2007].includes(sceneStore.whichModalSelected)
+  )
+})
 </script>
 
 <template>
-  <div
-    v-if="sceneStore.isModalOpen"
-    class="overlay"
-  >
+  <div v-if="canOpenModal" class="overlay">
 
     <div class="left-panel">
 
@@ -92,7 +97,7 @@ const handleClose = () => {
 /* 左灰色 */
 .left-panel {
   width: 30%;
-  background: rgba(0,0,0,0.55);
+  background: rgba(0,0,0,0);
 
   display: flex;
   align-items: end;

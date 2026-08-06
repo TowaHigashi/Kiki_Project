@@ -114,16 +114,12 @@ onUnmounted(() => {
     <SceneObject :scene="scene" :object-data="getObj(2004)" />
     <SceneObject :scene="scene" :object-data="getObj(2005)" />
     <SceneObject :scene="scene" :object-data="getObj(2006)" />
-
-<!-- 
-     -->
-
     <SceneObject :scene="scene" :object-data="getObj(2007)" />
     <SceneObject :scene="scene" :object-data="getObj(2101)" />
     <SceneObject :scene="scene" :object-data="getObj(2102)" />
     <SceneObject :scene="scene" :object-data="getObj(2103)" />
-
-    <!-- コンポーネント読み込み処理は最終的に以下に移管　※コード短縮のため -->
+    <SceneObject :scene="scene" :object-data="getObj(2104)" />
+    <!-- コンポーネント読み込み処理は最終的に以下に移管TODO　※コード短縮のため -->
     <!-- 
     <SceneObject
       v-for="objData in sceneObjects"

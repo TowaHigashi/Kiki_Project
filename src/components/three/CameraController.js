@@ -1,4 +1,4 @@
-// 廃止予定
+// 廃止予定TODO
 
 // カメラ移動の制御。targetPosition/targetLookAtへのスムーズな移動（lerp）を担当
 

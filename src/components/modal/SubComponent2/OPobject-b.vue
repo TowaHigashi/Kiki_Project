@@ -1,20 +1,21 @@
-<script setup>//右、左ボタンの処理
-import { useSceneStore } from '@/stores/sceneStore'
+<script setup>
 
-const sceneStore = useSceneStore()
+//右、左ボタンの処理。未使用のため削除予定TODO
 
-const nextPage = () => {
-  sceneStore.whichModalSelected = 2003
-}
+// import { useSceneStore } from '@/stores/sceneStore'
+// const sceneStore = useSceneStore()
+// const nextPage = () => {
+//   sceneStore.whichModalSelected = 2003
+// }
 
-const prevPage = () => {
-  sceneStore.whichModalSelected = 2006
-}
+// const prevPage = () => {
+//   sceneStore.whichModalSelected = 2006
+// }
 </script>
 
 <template>
 
-  <h1>記記の世界</h1>
+  <h1>紀紀の世界</h1>
 
   <img src="/object-images/object0-b/kiki-rogo.png" 
   style="width: 100px;"
@@ -25,8 +26,8 @@ const prevPage = () => {
     ここにkikiの説明文
   </p>
 
-
-<div class="navigation">
+<!-- 未使用のスライドボタン。削除予定TODO
+ <div class="navigation">
   <button
     class="nav-btn"
     @click="prevPage"
@@ -41,7 +42,7 @@ const prevPage = () => {
     ▶
   </button>
 
-</div>
+</div> -->
 
 </template>
 
@@ -55,7 +56,7 @@ const prevPage = () => {
   z-index: 10;
 }
 
-.navigation {
+/* .navigation { 未使用のCSS。削除予定TODO
   position: absolute;
 
   bottom: 30px;
@@ -65,7 +66,7 @@ const prevPage = () => {
 
   display: flex;
   gap: 20px;
-}
+} */
 
 .nav-btn {
   background: transparent;

@@ -5,10 +5,10 @@ export const Objects = [
         type: 'config',
         fileName: '',
         path: '',
-        position: [3.261, 5.189, -7.481],
+        position: [2.636, 5.046, -6.13],
         rotation: '',
         scale: '',
-        target: [0.212, 1.333, 0.442],
+        target: [0.049, 1.773, 0.593],
         invisible: '',
         name: 'カメラ初期位置',
         id: 1001,
@@ -130,7 +130,7 @@ export const Objects = [
         scale: [0.25, 0.25, 0.25],
         target: '',
         invisible: true,
-        name: '試しオブジェクト6',
+        name: 'クリック判定オブジェクト6',
         id: 2006,
         cameraFocusIn: {
             position: [-0.374, 1.216, -1.642],
@@ -212,6 +212,26 @@ export const Objects = [
         invisible: false,
         name: '試し砂浜',
         id: 2103,
+        cameraFocusIn: {
+            position: '',
+            target: '',
+        },
+        cameraFocusOut: {
+            position: '',
+            target: '',
+        }
+    },
+    {
+        type: 'object',
+        fileName: '1_Guitar_260725.glb',
+        path: '/models/1_Guitar_260725.glb',
+        position: [-0.1, 1.82, 0.22],
+        rotation: [0, 0.3, 3.14],
+        scale: [0.36, 0.36, 0.36],
+        target: '',
+        invisible: false,
+        name: '試しギター',
+        id: 2104,
         cameraFocusIn: {
             position: '',
             target: '',

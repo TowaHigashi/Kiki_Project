@@ -1,15 +1,14 @@
-<script setup>//右、左ボタンの処理
-import { useSceneStore } from '@/stores/sceneStore'
+<script setup>
+//右、左ボタンの処理 未使用のため削除予定TODO
+// import { useSceneStore } from '@/stores/sceneStore'
+// const sceneStore = useSceneStore()
+// const nextPage = () => {
+//   sceneStore.whichModalSelected = 2005
+// }
 
-const sceneStore = useSceneStore()
-
-const nextPage = () => {
-  sceneStore.whichModalSelected = 2005
-}
-
-const prevPage = () => {
-  sceneStore.whichModalSelected = 2003
-}
+// const prevPage = () => {
+//   sceneStore.whichModalSelected = 2003
+// }
 </script>
 
 <template>
@@ -25,7 +24,7 @@ const prevPage = () => {
 </template>
 
 <style scoped>
-.navigation {
+/* .navigation { 未使用のため削除予定TODO
   position: absolute;
 
   bottom: 30px;
@@ -35,7 +34,7 @@ const prevPage = () => {
 
   display: flex;
   gap: 20px;
-}
+} */
 
 .nav-btn {
   background: transparent;
