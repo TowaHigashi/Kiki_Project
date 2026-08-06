@@ -33,8 +33,8 @@ export const Objects = [
         name: 'クリック判定オブジェクト1',
         id: 2001,
         cameraFocusIn: {
-            position: [1.1, 2.987, -1.871],
-            target: [0.443, 1.691, 0.703],
+            position: [0.997, 2.542, -1.107],
+            target: [0.412, 1.958, 0.714],
         },
         cameraFocusOut: {
             position: [1.621, 3.369, -3.057],

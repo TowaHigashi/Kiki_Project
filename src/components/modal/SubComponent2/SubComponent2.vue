@@ -15,7 +15,7 @@
 
 <template>
 
-  <h1>紀紀の世界</h1>
+  <h1>ARTIST</h1>
 
   <img src="/object-images/object0-b/kiki-rogo.png" 
   style="width: 100px;"

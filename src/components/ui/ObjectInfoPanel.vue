@@ -4,11 +4,11 @@ import { useSceneStore } from '@/stores/sceneStore'
 import { Objects } from '@/data/objects'
 // import { useCameraController2 } from '@/components/three/CameraController2'
 
-import OPobjectB from '../modal/SubComponent2/OPobject-b.vue'
-import OPobjectC from '../modal/SubComponent3/OPobject-c.vue'
-import OPobjectD from '../modal/SubComponent4/OPobject-d.vue'
-import OPobjectE from '../modal/SubComponent5/OPobject-e.vue'
-import OPobjectF from '../modal/SubComponent6/OPobject-f.vue'
+import SubComponent2 from '../modal/SubComponent2/SubComponent2.vue'
+import SubComponent3 from '../modal/SubComponent3/SubComponent3.vue'
+import SubComponent4 from '../modal/SubComponent4/SubComponent4.vue'
+import SubComponent5 from '../modal/SubComponent5/SubComponent5.vue'
+import SubComponent6 from '../modal/SubComponent6/SubComponent6.vue'
 
 const sceneStore = useSceneStore()
 // const cameraController2 = useCameraController2()
@@ -25,19 +25,19 @@ const currentPanel = computed(() => {
   switch(sceneStore.whichModalSelected){
 
     case 2002:
-      return OPobjectB
+      return SubComponent2
 
     case 2003:
-      return OPobjectC
+      return SubComponent3
 
     case 2004:
-      return OPobjectD
+      return SubComponent4
 
     case 2005:
-      return OPobjectE
+      return SubComponent5
 
     case 2006:
-      return OPobjectF
+      return SubComponent6
 
     default:
       return null
