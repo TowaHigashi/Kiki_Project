@@ -241,6 +241,27 @@ export const Objects = [
             target: '',
         }
     },
+    {
+        type: 'video',
+        fileName: 'hebi_MV_final0304.mp4',
+        path: '/video/hebi_MV_final0304.mp4',
+        position: [-0.17, 1.95, 0.6],
+        rotation: [0, 1.7, 0],
+        scale: [0.5, 0.5, 0.5],
+        target: '',
+        invisible: false,
+        name: '試し動画',
+        id: 3001,
+        cameraFocusIn: {
+            position: '',
+            target: '',
+        },
+        cameraFocusOut: {
+            position: '',
+            target: '',
+        }
+    },
+
 
 
 ]

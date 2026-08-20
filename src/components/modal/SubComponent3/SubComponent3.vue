@@ -1,15 +1,4 @@
 <script setup>
-
-//右、左ボタンの処理。未使用のため削除予定TODO
-
-// import { useSceneStore } from '@/stores/sceneStore'
-// const sceneStore = useSceneStore()
-// const nextPage = () => {
-//   sceneStore.whichModalSelected = 2004
-// }
-// const prevPage = () => {
-//   sceneStore.whichModalSelected = 2002
-// }
 </script>
 
 <template>
@@ -23,7 +12,7 @@
 
       <div class="work-item">
         <img
-          src="/object-images/object0-c/jyorougumo.png"
+          :src="'/images/SubComponent3/jyorougumo.png'"
           alt="女郎蜘蛛"
         >
         <p>女郎蜘蛛</p>
@@ -31,7 +20,7 @@
 
       <div class="work-item">
         <img
-          src="/object-images/object0-c/pandora.png"
+          :src="'/images/SubComponent3/pandora.png'"
           alt="パンドラ"
         >
         <p>パンドラ</p>
@@ -39,7 +28,7 @@
 
       <div class="work-item">
         <img
-          src="/object-images/object0-c/darin-test.jpg"
+          :src="'/images/SubComponent3/darin-test.jpg'"
           alt="作品3"
         >
         <p>作品3</p>
@@ -47,7 +36,7 @@
 
       <div class="work-item">
         <img
-          src="/object-images/object0-c/inferno-test.png"
+          :src="'/images/SubComponent3/inferno-test.png'"
           alt="作品4"
         >
         <p>作品4</p>
@@ -55,7 +44,7 @@
 
       <div class="work-item">
         <img
-          src="/object-images/object0-c/rairakku-test.jpg"
+          :src="'/images/SubComponent3/rairakku-test.jpg'"
           alt="作品5"
         >
         <p>作品5</p>
@@ -63,7 +52,7 @@
 
       <div class="work-item">
         <img
-          src="/object-images/object0-c/tengoku-test.jpg"
+          :src="'/images/SubComponent3/tengoku-test.jpg'"
           alt="作品6"
         >
         <p>作品6</p>
@@ -116,18 +105,6 @@
   margin-top: 10px;
   font-size: 16px;
 }
-
-/* .navigation { 未使用のため削除予定TODO
-  position: absolute;
-
-  bottom: 30px;
-  left: 50%;
-
-  transform: translateX(-50%);
-
-  display: flex;
-  gap: 20px;
-} */
 
 .nav-btn {
   background: transparent;

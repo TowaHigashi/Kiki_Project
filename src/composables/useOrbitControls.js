@@ -38,7 +38,7 @@ export function useOrbitControls(
     controls.autoRotate = false
 
     // limits
-    controls.minDistance = 2
+    controls.minDistance = 0.3
     controls.maxDistance = 40
 
     return {

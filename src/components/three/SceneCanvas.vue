@@ -13,8 +13,11 @@ import { useInteractionManager } from '@/components/three/InteractionManager'
 import { useCameraController2 } from '@/components/three/CameraController2'
 import { useCameraBlurrer } from '@/components/three/CameraBlurrer'
 import { useSceneStore } from '@/stores/sceneStore'
+import { useSoundStore } from '@/stores/soundStore'
 import { useStrollingDetection } from '@/composables/useStrollingDetection'
+import { useScreenVideoControls } from '@/composables/useScreenVideoControls'
 import ObjectInfoPanel from '@/components/ui/ObjectInfoPanel.vue'
+import ScreenVideo from '@/components/sound/ScreenVideo.vue'
 
 import SceneObject from '@/components/objects/SceneObject.vue'
 import { Objects } from '@/data/objects'
@@ -24,9 +27,11 @@ const getObj = (id) => {
 }
 
 const containerRef = ref(null)
+const screenVideoRef = ref(null)
 
 const { scene } = useThreeScene()
 const sceneStore = useSceneStore()
+const soundStore = useSoundStore()
 
 let renderer
 let camera
@@ -37,6 +42,7 @@ let interactionManager
 let strollingDetection
 let cameraController
 let cameraBlurrer
+let screenVideoControls
 
 onMounted(() => {
   const container = containerRef.value
@@ -74,6 +80,8 @@ onMounted(() => {
 
     strollingDetection.update()
 
+    screenVideoRef.value?.update?.()
+
     renderer.render(scene, camera)
   })
 
@@ -91,6 +99,19 @@ onMounted(() => {
     container,
     sceneStore,
   })
+
+  screenVideoControls = useScreenVideoControls({
+    container,
+    scene,
+    camera,
+    mouse: mouseController.mouse,
+    getMesh: () => screenVideoRef.value?.getMesh?.() ?? null,
+    getVideo: () => screenVideoRef.value?.getVideo?.() ?? null,
+    onHoverChange: (visible) => {
+      screenVideoRef.value?.setUiVisible?.(visible)
+    },
+    canPlay: () => soundStore.videoEnabled,
+  })
 })
 
 onUnmounted(() => {
@@ -99,8 +120,10 @@ onUnmounted(() => {
   mouseController?.destroy()
 
   interactionManager?.destroy()
-  
+
   cameraBlurrer?.destroy()
+
+  screenVideoControls?.destroy()
 })
 
 </script>
@@ -119,6 +142,12 @@ onUnmounted(() => {
     <SceneObject :scene="scene" :object-data="getObj(2102)" />
     <SceneObject :scene="scene" :object-data="getObj(2103)" />
     <SceneObject :scene="scene" :object-data="getObj(2104)" />
+    <!-- 動画は GLB ではないため ScreenVideo で生成（メタデータは getObj(3001)） -->
+    <ScreenVideo
+      ref="screenVideoRef"
+      :scene="scene"
+      :object-data="getObj(3001)"
+    />
     <!-- コンポーネント読み込み処理は最終的に以下に移管TODO　※コード短縮のため -->
     <!-- 
     <SceneObject
@@ -134,6 +163,7 @@ onUnmounted(() => {
 
 <style scoped>
 .scene-container {
+  position: relative;
   width: 100vw;
   height: 100vh;
   overflow: hidden;

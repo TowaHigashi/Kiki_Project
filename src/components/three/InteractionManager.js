@@ -75,6 +75,9 @@ export function useInteractionManager({
 
         const id = target.userData?.id
 
+        // スクリーン動画は useScreenVideoControls 側で扱う
+        if (target.userData?.type === 'video') return
+
         // idからオブジェクトデータを取得し、cameraFocusIn.positionとtargetを取り出す
         const objectData = Objects.find(obj => obj.id === id)
         const cameraFocusInPosition = objectData?.cameraFocusIn?.position || null

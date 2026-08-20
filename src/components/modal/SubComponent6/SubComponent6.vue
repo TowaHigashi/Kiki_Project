@@ -1,33 +1,18 @@
 <script setup>
-//右、左ボタンの処理 未使用のため削除予定TODO
-
-// import { useSceneStore } from '@/stores/sceneStore'
-// const sceneStore = useSceneStore()
-// const nextPage = () => {
-//   sceneStore.whichModalSelected = 2002
-// }
-
-// const prevPage = () => {
-//   sceneStore.whichModalSelected = 2005
-// }
 </script>
 
 <template>
-  <h1>猫です。(予備)</h1>
+  <h1 class="modal-title">予備</h1>
+  <h2>猫です。</h2><br>
+
 </template>
 
 <style scoped>
-/* .navigation { 未使用のため削除予定TODO
-  position: absolute;
-
-  bottom: 30px;
-  left: 50%;
-
-  transform: translateX(-50%);
-
-  display: flex;
-  gap: 20px;
-} */
+.modal-title {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 24px;
+}
 
 .nav-btn {
   background: transparent;
